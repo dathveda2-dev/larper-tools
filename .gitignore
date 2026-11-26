@@ -1,0 +1,8 @@
+sources/
+build/
+.config
+.config.old
+include/autoconf.h
+larper-tools
+scripts/kconfig/mconf
+*.o

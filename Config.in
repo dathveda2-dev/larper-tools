@@ -1,0 +1,112 @@
+#
+# larper-tools Configuration (BusyBox-style Kconfig)
+#
+
+mainmenu "larper-tools Configuration"
+
+menu "Core Hacker & Matrix Eye-Candy"
+
+config CMATRIX
+	bool "cmatrix - Matrix digital rain (abishekvashok/cmatrix)"
+	default y
+	help
+	  Classic falling green Matrix characters in ncurses.
+	  Upstream: https://github.com/abishekvashok/cmatrix
+
+config NMS
+	bool "nms - Sneakers movie decryption effect (bartobri/no-more-secrets)"
+	default y
+	help
+	  Recreates the famous data decryption effect from the 1992 movie
+	  Sneakers. Pipe any command into it (e.g. ls -la | nms).
+	  Upstream: https://github.com/bartobri/no-more-secrets
+
+config CBONSAI
+	bool "cbonsai - Procedural ASCII bonsai tree (jallbrit/cbonsai)"
+	default y
+	help
+	  Intelligently creates, colors, and positions a bonsai tree in your
+	  terminal using ncurses.
+	  Upstream: https://gitlab.com/jallbrit/cbonsai
+
+config PIPES
+	bool "pipes.sh - Animated neon terminal pipes (pipeseroni/pipes.sh)"
+	default y
+	help
+	  Animated colorful box-drawing pipes screensaver embedded directly
+	  into the larper-tools multicall binary.
+	  Upstream: https://github.com/pipeseroni/pipes.sh
+
+endmenu
+
+menu "Terminal Flex, Banners & Filters"
+
+config NEOFETCH
+	bool "neofetch - Classic Linux rice system info flex (dylanaraps/neofetch)"
+	default y
+	help
+	  The iconic CLI system information tool with distro ASCII art,
+	  embedded directly into the larper-tools binary.
+	  Upstream: https://github.com/dylanaraps/neofetch
+
+config LOLCAT
+	bool "lolcat - Fast C rainbow terminal filter (jaseg/lolcat)"
+	default y
+	help
+	  High-speed C implementation of lolcat that applies 24-bit rainbow
+	  gradients to piped text.
+	  Upstream: https://github.com/jaseg/lolcat
+
+config FIGLET
+	bool "figlet - Large ASCII art hacker banners (cmatsuoka/figlet)"
+	default y
+	help
+	  Generates giant ASCII text banners with an embedded standard font
+	  so it works completely standalone from the single binary.
+	  Upstream: https://github.com/cmatsuoka/figlet
+
+config TTY_CLOCK
+	bool "tty-clock - Giant ncurses digital clock (xorg62/tty-clock)"
+	default y
+	help
+	  Classic terminal digital clock for tiling WM ricing screenshots.
+	  Upstream: https://github.com/xorg62/tty-clock
+
+endmenu
+
+menu "Classic Terminal Memes & Screensavers"
+
+config SL
+	bool "sl - Steam Locomotive typo punishment (mtoyoda/sl)"
+	default y
+	help
+	  Chugs an animated ASCII steam locomotive across your screen when
+	  you mistype ls as sl.
+	  Upstream: https://github.com/mtoyoda/sl
+
+config NYANCAT
+	bool "nyancat - Animated ANSI Nyan Cat (klange/nyancat)"
+	default y
+	help
+	  Renders the legendary rainbow Nyan Cat animation right in your
+	  terminal.
+	  Upstream: https://github.com/klange/nyancat
+
+endmenu
+
+menu "Build & Installation Options"
+
+config STRIP_BINARY
+	bool "Strip final larper-tools binary"
+	default y
+	help
+	  Run strip on the final larper-tools ELF binary to reduce size.
+
+config INSTALL_SYMLINKS
+	bool "Create BusyBox-style symlinks on 'make install'"
+	default y
+	help
+	  Create symlinks (cmatrix, sl, cbonsai, nms, etc.) pointing to
+	  larper-tools in $(DESTDIR)$(PREFIX)/bin during make install.
+
+endmenu
